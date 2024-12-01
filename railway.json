@@ -1,8 +1,9 @@
 {
   "build": {
-    "builder": "paketobuildpacks/builder:base"
+    "builder": "php"
   },
-  "start": "php artisan serve --host=0.0.0.0 --port=$PORT",
+  "deploy": {
+    "build": "composer install --optimize-autoloader --no-dev",
+    "start": "php artisan serve --host=0.0.0.0 --port=80"
+  }
 }
-
-  
